@@ -2,9 +2,9 @@ lobird
 =======
 
 A freak hybrid of bluebird and lodash
-var lobird = require("./");
 
 ### Example Usage
+	var lobird = require("./");
 	var request = lobird.promisify(require("request"));
 	
 	request("http://www.google.com")
