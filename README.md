@@ -3,6 +3,15 @@ lobird
 
 A freak hybrid of bluebird and lodash
 
+### NOTE
+	this hasn't been fully tested, use at your own risk
+
+### TODO
+- Add test suite with different use cases
+- Make sure it works when passed a Promise
+	- [like bluebird map](https://github.com/petkaantonov/bluebird/blob/master/API.md#mapfunction-mapper--object-options---promise)
+
+
 ### Example Usage
 
 	var lobird = require("../");
@@ -33,11 +42,3 @@ A freak hybrid of bluebird and lodash
 		._lb_last    (        )
 		._lb_isEqual ( 'tim'  )
 		.then(console.log.bind(console));
-
-### NOTE
-	this hasn't been fully tested, use at your own risk
-
-### TODO
-- Add test suite with different use cases
-- Make sure it works when passed a Promise
-	- [like bluebird map](https://github.com/petkaantonov/bluebird/blob/master/API.md#mapfunction-mapper--object-options---promise)
