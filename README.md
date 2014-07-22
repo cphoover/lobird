@@ -4,7 +4,7 @@ lobird
 A freak hybrid of bluebird and lodash
 
 ### Example Usage
-	var lobird = require("./");
+	var lobird = require("lobird");
 	var request = lobird.promisify(require("request"));
 	
 	request("http://www.google.com")
