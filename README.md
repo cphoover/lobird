@@ -25,3 +25,11 @@ var lobird = require("./");
 	._lb_pluck("name")
 	.bind(console)
 	.then(console.log);
+
+### NOTE
+	this hasn't been fully tested, use at your own risk
+
+### TODO
+- Add test suite with different use cases
+- Make sure it works when passed a Promise
+	- [like bluebird map](https://github.com/petkaantonov/bluebird/blob/master/API.md#mapfunction-mapper--object-options---promise)
