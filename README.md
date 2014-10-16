@@ -3,15 +3,6 @@ lobird
 
 A freak hybrid of bluebird and lodash
 
-### NOTE
-	this hasn't been fully tested, use at your own risk
-
-### TODO
-- Add test suite with different use cases
-- Make sure it works when passed a Promise
-	- [like bluebird map](https://github.com/petkaantonov/bluebird/blob/master/API.md#mapfunction-mapper--object-options---promise)
-
-
 ### Example Usage
 
 	var lobird = require("../");
@@ -20,8 +11,8 @@ A freak hybrid of bluebird and lodash
 	var readFile = lobird.promisify(require("fs").readFile);
 
 	request("http://www.google.com")
-		._lb_first (           ) // get full response
-		._lb_pick  ( 'headers' )
+		._first (           ) // get full response
+		._pick  ( 'headers' )
 		.then(console.log.bind(console));
 
 	request({
@@ -31,14 +22,20 @@ A freak hybrid of bluebird and lodash
 			"User-Agent": "request"
 		}
 	})
-		._lb_last  (        ) //get response body
-		._lb_pluck ( "name" )
+		._last  (        ) //get response body
+		._pluck ( "name" )
 		.then(console.log.bind(console));
 
 	readFile(__dirname + "/people.json", "utf8")
 		.then(JSON.parse.bind(JSON))
-		._lb_pluck   ( 'name' )
-		._lb_without ( 'bill' )
-		._lb_last    (        )
-		._lb_isEqual ( 'tim'  )
+		._pluck   ( 'name' )
+		._without ( 'bill' )
+		._last    (        )
+		._isEqual ( 'tim'  )
 		.then(console.log.bind(console));
+
+### TODO
+- Add test suite with different use cases
+- Make sure it works when resolved with a Promise
+	- [like bluebird map](https://github.com/petkaantonov/bluebird/blob/master/API.md#mapfunction-mapper--object-options---promise)
+

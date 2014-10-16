@@ -3,8 +3,8 @@ var lobird   = require("../"                           ) ,
 	readFile = lobird.promisify(require("fs").readFile ) ;
 
 request("http://www.google.com")
-	._lb_first (           ) // get full response
-	._lb_pick  ( 'headers' )
+	._first (           ) // get full response
+	._pick  ( 'headers' )
 	.then(console.log.bind(console));
 
 request({
@@ -14,14 +14,14 @@ request({
 		"User-Agent": "request"
 	}
 })
-	._lb_last  (        ) //get response body
-	._lb_pluck ( "name" )
+	._last  (        ) //get response body
+	._pluck ( "name" )
 	.then(console.log.bind(console));
 
 readFile(__dirname + "/people.json", "utf8")
 	.then(JSON.parse.bind(JSON))
-	._lb_pluck   ( 'name' )
-	._lb_without ( 'bill' )
-	._lb_last    (        )
-	._lb_isEqual ( 'tim'  )
+	._pluck   ( 'name' )
+	._without ( 'bill' )
+	._last    (        )
+	._isEqual ( 'tim'  )
 	.then(console.log.bind(console));
